@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <style>
+   
+    </style>
+  </head>
+  <body>
+    <div class="home-image">
+      <div class="home-image-left">
+        <div class="home-image1 pic-container">
+          <i
+            class="ri-add-large-line icon"
+            onclick="handleIconClick('fileInput1')"
+          ></i>
+          <input
+            type="file"
+            id="fileInput1"
+            style="display: none"
+            accept="image/*"
+            onchange="handleFileSelect(event, 'image1', 'fileInput1')"
+          />
+          <img
+            id="image1"
+            src=""
+            alt="Image Preview"
+            style="width: 55vw; height: 24vw; display: none; border-radius: 6px"
+          />
+        </div>
+      </div>
+      <div class="home-image-right">
+        <div class="home-image-right-one pic pic-container">
+          <i
+            class="ri-add-large-line icon"
+            onclick="handleIconClick('fileInput2')"
+          ></i>
+          <input
+            type="file"
+            id="fileInput2"
+            style="display: none"
+            accept="image/*"
+            onchange="handleFileSelect(event, 'image2', 'fileInput2')"
+          />
+          <img
+            id="image2"
+            src=""
+            alt="Image Preview"
+            style="width: 30vw; height: 20vw; display: none; border-radius: 6px"
+          />
+        </div>
+        <div class="home-image-right-two pic pic-container">
+          <i
+            class="ri-add-large-line icon"
+            onclick="handleIconClick('fileInput3')"
+          ></i>
+          <input
+            type="file"
+            id="fileInput3"
+            style="display: none"
+            accept="image/*"
+            onchange="handleFileSelect(event, 'image3', 'fileInput3')"
+          />
+          <img
+            id="image3"
+            src=""
+            alt="Image Preview"
+            style="width: 30vw; height: 20vw; display: none; border-radius: 6px"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="guest-pop">
+      <div class="guest-pop2">
+        <input
+          type="text"
+          placeholder="Add minimum guest +"
+          id="min-guest"
+          oninput="updateGuestCount()"
+        />
+        <input
+          type="text"
+          placeholder="Add maximum guest +"
+          id="max-guest"
+          oninput="updateGuestCount()"
+        />
+      </div>
+    </div>
+    <div class="Villas-container">
+      <div class="Villas-container-left">
+        <div class="address">
+          <input
+            type="text"
+            class="address-input1 add-input"
+            placeholder="Resort name"
+          />
+          <input
+            type="text"
+            class="address-input2 add-input"
+            placeholder="location"
+          />
+          <div class="guest">
+            <input
+              type="text"
+              class="address-input3 add-input"
+              placeholder="Add maximum guest stay in villas"
+              readonly
+            />
+            <select>
+              <option>1 Room</option>
+              <option>2 Rooms</option>
+              <option>3 Rooms</option>
+              <option>4 Rooms</option>
+              <option>5 Rooms</option>
+              <option>6 Rooms</option>
+              <option>7 Rooms</option>
+              <option>8 Rooms</option>
+              <option>9 Rooms</option>
+            </select>
+          </div>
+        </div>
+        <div class="facilities">
+          <div class="facility-content">
+            <div class="facility-head">
+              <h1>Add Yours Villas Facility +</h1>
+            </div>
+            <div class="actual-facilites">
+              <div class="facility-variety">
+                <div class="facility-variety-png">
+                  <img
+                    src="assets/Beach Umbrella.png"
+                    alt=""
+                    height="40vw"
+                    width="50vw"
+                  />
+                </div>
+                <div class="facility-variety-head">
+                  <h5>Swimming Pool</h5>
+                </div>
+              </div>
+              <div class="facility-variety">
+                <div class="facility-variety-png">
+                  <img
+                    src="assets/Grass.png"
+                    alt=""
+                    height="40vw"
+                    width="50vw"
+                  />
+                </div>
+                <div class="facility-variety-head">
+                  <h5>Lawn</h5>
+                </div>
+              </div>
+              <div class="facility-variety">
+                <div class="facility-variety-png">
+                  <img
+                    src="assets/Outdoor Swimming Pool.png"
+                    alt=""
+                    height="40vw"
+                    width="50vw"
+                  />
+                </div>
+                <div class="facility-variety-head">
+                  <h5>Beach View</h5>
+                </div>
+              </div>
+              <div class="facility-variety">
+                <div class="facility-variety-png">
+                  <img
+                    src="assets/Buffet Breakfast.png"
+                    alt=""
+                    height="40vw"
+                    width="50vw"
+                  />
+                </div>
+                <div class="facility-variety-head">
+                  <h5>Meals Available</h5>
+                </div>
+              </div>
+              <div class="facility-variety">
+                <div class="facility-variety-png">
+                  <img
+                    src="assets/wifi.png"
+                    alt=""
+                    height="35vw"
+                    width="40vw"
+                  />
+                </div>
+                <div class="facility-variety-head">
+                  <h5>Wifi</h5>
+                </div>
+              </div>
+            </div>
+            <div class="offers">
+              <div class="offers-one off">
+                <h3>Add any offers name..</h3>
+                <button>Add offers+</button>
+              </div>
+              <div class="offers-two off">
+                <h3>Add offers name..</h3>
+                <button>Add offers+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="Villas-container-right">
+        <div class="prices">
+          <div class="prices-head">
+            <div class="price-text">
+              <h1>Add Prices Based on room</h1>
+            </div>
+          </div>
+          <div class="prices-container">
+            <div class="prices-container-left cost">
+              <input type="text" placeholder="Add villas prices +" />
+              <input type="text" placeholder="Add per villas prices +" />
+              <button>Add</button>
+            </div>
+            <div class="prices-container-right cost">
+              <input type="text" placeholder="Add villas prices +" />
+              <input type="text" placeholder="Add per villas prices +" />
+              <button>Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about">
+      <h2>Add About yours villas</h2>
+      <input type="text" placeholder="Add some information about villas..." />
+    </div>
+    <h3>Spaces</h3>
+    <div class="spaces">
+        <div class="bedroom-slide">
+            <div class="swiper mySwiper bedroom mybedroom">
+                <div class="swiper-wrapper">
+                
+                    <div class="swiper-slide bed-slide">
+                        <div class="spaces-cards">
+                            <div class="bedroom-photo bedroom pic-container">
+                                <i
+            class="ri-add-large-line icon"
+            onclick="handleIconClick('fileInput4')"
+          ></i>
+          <input
+            type="file"
+            id="fileInput4"
+            style="display: none"
+            accept="image/*"
+            onchange="handleFileSelect(event, 'image4', 'fileInput4')"
+          />
+          <img
+            id="image4"
+            src=""
+            alt="Image Preview"
+            style="width: 23.5vw; height: 15vw; display: none; border-radius: 6px"
+          />
+                            </div>
+                            <div class="bedroom-data bedroom">
+                                <h4>Add details your hotel rooms..</h4>
+                                <input type="text" placeholder="1.____________________">
+                                <input type="text" placeholder="2.____________________">
+                                <input type="text" placeholder="3.____________________">
+                                <input type="text" placeholder="4.____________________">
+                                <input type="text" placeholder="5.____________________">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide bed-slide">
+                        <div class="spaces-cards">
+                            <div class="bedroom-photo bedroom pic-container">
+                                <i
+                                class="ri-add-large-line icon"
+                                onclick="handleIconClick('fileInput5')"
+                              ></i>
+                              <input
+                                type="file"
+                                id="fileInput5"
+                                style="display: none"
+                                accept="image/*"
+                                onchange="handleFileSelect(event, 'image5', 'fileInput5')"
+                              />
+                              <img
+                                id="image5"
+                                src=""
+                                alt="Image Preview"
+                                style="width: 23.5vw; height: 15vw; display: none; border-radius: 6px"
+                              />
+                            </div>
+                            <div class="bedroom-data bedroom">
+                                <h4>Add details your hotel rooms..</h4>
+                                <input type="text" placeholder="1.____________________">
+                                <input type="text" placeholder="2.____________________">
+                                <input type="text" placeholder="3.____________________">
+                                <input type="text" placeholder="4.____________________">
+                                <input type="text" placeholder="5.____________________">
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+        <div class="add-cards-button">
+            <div class="add-cards">
+                <i class="ri-add-large-fill add-bedroom" onclick="addSpacesCard()"></i>
+            </div>
+        </div>
+    </div>
+    <div class="Amenties">
+      <h3>Amenties</h3>
+      <input type="text" placeholder="Add your hotel Amenties..." />
+    </div>
+    <div class="Amenties-contents">
+      <button>+29 More</button>
+      <div class="actual-amenties">
+        <div class="actual-amenties-one amen-png">
+          <div class="actual-amenties-png">
+            <img src="assets/Wardrobe.png" alt="" height="35vw" width="40vw" />
+          </div>
+          <p>wardrobe</p>
+          <div class="actual-amenties-png">
+            <img
+              src="assets/Rock Music.png"
+              alt=""
+              height="35vw"
+              width="40vw"
+            />
+          </div>
+          <p>Music System</p>
+
+          <div class="actual-amenties-png amen-3">
+            <img
+              src="assets/Hair Dryer.png"
+              alt=""
+              height="35vw"
+              width="40vw"
+            />
+          </div>
+          <p>Hair Dryer</p>
+        </div>
+        <div class="actual-amenties-two amen-png">
+          <div class="actual-amenties-png">
+            <img src="assets/TV.png" alt="" height="35vw" width="40vw" />
+          </div>
+          <p class="amen-1">Television</p>
+          <div class="actual-amenties-png">
+            <img src="assets/Bookmark.png" alt="" height="35vw" width="40vw" />
+          </div>
+          <p>Extra Mattress</p>
+
+          <div class="actual-amenties-png">
+            <img src="assets/Towels.png" alt="" height="35vw" width="40vw" />
+          </div>
+          <p>Towels</p>
+        </div>
+      </div>
+    </div>
+    <h3>Meals</h3>
+    <div class="meals">
+      <div class="meals-photo">
+        <i class="ri-add-large-line"></i>
+      </div>
+      <button>Add More +</button>
+      <input type="text" placeholder="Add information about meals..." />
+    </div>
+    <h3>Location</h3>
+    <div class="location">
+      <i class="ri-add-large-line"></i>
+    </div>
+    <h3>Home Rules and Truths</h3>
+    <div class="rules rules-policy">
+      <input
+        type="text"
+        placeholder="1.__________________________________________________________________________________"
+      />
+      <input
+        type="text"
+        placeholder="2.__________________________________________________________________________________"
+      />
+      <input
+        type="text"
+        placeholder="3.__________________________________________________________________________________"
+      />
+      <input
+        type="text"
+        placeholder="4.__________________________________________________________________________________"
+      />
+      <input
+        type="text"
+        placeholder="5.__________________________________________________________________________________"
+      />
+      <input
+        type="text"
+        placeholder="6.__________________________________________________________________________________"
+      />
+      <input
+        type="text"
+        placeholder="7.__________________________________________________________________________________"
+      />
+      <input
+        type="text"
+        placeholder="8.__________________________________________________________________________________"
+      />
+      <button>Add more +</button>
+    </div>
+    <h3>Policy</h3>
+    <div class="Policy rules-policy">
+      <input
+        type="text"
+        placeholder="1.__________________________________________________________________________________"
+      />
+      <input
+        type="text"
+        placeholder="2.__________________________________________________________________________________"
+      />
+      <input
+        type="text"
+        placeholder="3.__________________________________________________________________________________"
+      />
+      <input
+        type="text"
+        placeholder="4.__________________________________________________________________________________"
+      />
+      <input
+        type="text"
+        placeholder="5.__________________________________________________________________________________"
+      />
+      <input
+        type="text"
+        placeholder="6.__________________________________________________________________________________"
+      />
+      <input
+        type="text"
+        placeholder="7.__________________________________________________________________________________"
+      />
+      <input
+        type="text"
+        placeholder="8.__________________________________________________________________________________"
+      />
+      <button>Add more +</button>
+    </div>
+    <h3>FAQs</h3>
+    <div class="FAQ">
+      <input type="text" placeholder="Add Questions..." />
+      <input type="text" placeholder="Add your answers..." />
+      <button>Add More +</button>
+    </div>
+    <!-- Footer -->
+
+    <div class="footer">
+      <div class="foot-inner">
+        <div class="foot1">
+          <h5>HOUSEHOTEL</h5>
+          <p>
+            consectebur adipiscing edit Nunic nudla vel nisl nunc import aeneam
+            arcu tonor tortor ums diaym venernalis morbi
+          </p>
+          <div class="icon icons">
+            <i class="ri-facebook-box-fill"></i>
+            <i class="ri-twitter-fill"></i>
+            <i class="ri-instagram-fill"></i>
+            <i class="ri-youtube-fill"></i>
+          </div>
+        </div>
+
+        <div class="foot2 ani">
+          <div class="foo21">
+            <h5>Quick Links</h5>
+            <a href="#">Home</a>
+            <a href="#">Villas</a>
+            <a href="#">About Us</a>
+            <a href="#">Gallary</a>
+            <a href="#">Contact us</a>
+          </div>
+
+          <div class="foot2 foot2-extra">
+            <h5>Services</h5>
+            <a href="#">Reasurant</a>
+            <a href="#">Swimming Pool</a>
+            <a href="#">Transport</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Term & Condition</a>
+          </div>
+        </div>
+        <div class="foot2 foo2">
+          <h5>Services</h5>
+          <a href="#">Reasurant</a>
+          <a href="#">Swimming Pool</a>
+          <a href="#">Transport</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Term & Condition</a>
+        </div>
+        <div class="foot3">
+          <h5>Subscribe Now !</h5>
+
+          <div class="input-div">
+            <input type="text" placeholder="hotelexample@gmail.com" />
+
+            <i class="ri-telegram-2-fill"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>Copyright@2021----- All Rights reserved</p>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
